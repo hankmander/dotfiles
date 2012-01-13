@@ -57,8 +57,6 @@ perform `dired-do-search' on all files in the *Find* buffer."
     (function (lambda ()
                 (setq indent-tabs-mode nil))))
 
-(global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
-
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 (custom-set-variables
@@ -75,3 +73,5 @@ perform `dired-do-search' on all files in the *Find* buffer."
  )
 
 (global-set-key (kbd "<C-tab>") 'ibuffer)
+(global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
+(global-set-key (kbd "s-d") (kbd "C-x d RET") )
