@@ -12,8 +12,10 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
 (set-foreground-color "white")
 (set-background-color "black")
+
 (require 'dired-details)
 (dired-details-install)
 (require 'dired-details+)
@@ -51,6 +53,25 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (add-to-list 'auto-mode-alist '("\\.styl$" . sass-mode))
+(setq jade-mode-hook
+    (function (lambda ()
+                (setq indent-tabs-mode nil))))
 
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
-(global-set-key (kbd "<C-tab>") 'ibuffer )
+
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(frame-background-mode (quote dark)))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+(global-set-key (kbd "<C-tab>") 'ibuffer)
