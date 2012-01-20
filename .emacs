@@ -75,3 +75,5 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (global-set-key (kbd "<C-tab>") 'ibuffer)
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
+
+(setq x-select-enable-clipboard t)
