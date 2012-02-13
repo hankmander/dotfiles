@@ -108,3 +108,13 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# hack for clojure
+
+export CLOJURE_EXT=~/.clojure
+
+export PATH=$PATH:~/opt/clojure-contrib/launchers/bash
+
+alias clj=clj-env-dir
+
+export PATH=$PATH:~/opt/leiningen
