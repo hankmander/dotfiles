@@ -67,6 +67,8 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+(set-fringe-style 4)
+
 (set-foreground-color "white")
 (set-background-color "black")
 
