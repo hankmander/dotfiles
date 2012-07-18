@@ -17,7 +17,6 @@ perform `dired-do-search' on all files in the *Find* buffer."
   (with-current-buffer "*Find*"
     (dired-toggle-marks)
     (dired-do-search regexp)))
-(global-set-key [pause] 'find-grep-dired-do-search)
 
 (defvar user-temporary-file-directory
   (concat temporary-file-directory user-login-name "/"))
@@ -31,10 +30,17 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (setq auto-save-file-name-transforms
       `((".*" ,user-temporary-file-directory t)))
 
-;;(require 'sws-mode)
-;;(require 'jade-mode)    
+
+(let ((default-directory "~/.emacs.d/elpa/"))
+      (normal-top-level-add-subdirs-to-load-path))
+(require 'sws-mode)
+(require 'jade-mode)
+(require 'stylus-mode)
+(require 'coffee-mode)
+(require 'auto-complete)
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-(add-to-list 'auto-mode-alist '("\\.styl$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
+
 (setq jade-mode-hook
     (function (lambda ()
                 (setq indent-tabs-mode nil))))
@@ -59,6 +65,7 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (global-set-key (kbd "<C-tab>") 'ibuffer)
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
@@ -66,11 +73,12 @@ perform `dired-do-search' on all files in the *Find* buffer."
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-(set-fringe-style 4)
+(if (fboundp 'fringe-mode) (fringe-mode 4))
 
 (set-foreground-color "white")
 (set-background-color "black")
 
 (winner-mode)
 (windmove-default-keybindings 'super)
+
+(global-set-key [pause] 'find-grep-dired-do-search)
