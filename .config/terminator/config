@@ -1,0 +1,26 @@
+[global_config]
+  window_state = fullscreen
+  borderless = True
+  handle_size = 1
+  sticky = True
+[keybindings]
+  go_left = <Super>Left
+  go_down = <Super>Down
+  go_right = <Super>Right
+  go_up = <Super>Up
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    copy_on_selection = True
+    scrollback_lines = 2000
+    font = DejaVu Sans 12
+    background_image = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
