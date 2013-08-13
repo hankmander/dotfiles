@@ -4,6 +4,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
+(global-set-key (kbd "C-<") 'ag )
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
@@ -27,3 +28,5 @@
   '(lambda() (coffee-custom)))
 
 (set-face-attribute 'default nil :height 110)
+
+(setq ag-highlight-search t)
