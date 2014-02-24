@@ -1,5 +1,5 @@
-;;hanktards små hack
-
+;; hanktards små hack
+;; key bindings
 (global-set-key (kbd "<C-tab>") 'ibuffer)
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
@@ -17,6 +17,8 @@
 (set-foreground-color "white")
 (set-background-color "black")
 
+(set-default-font "DejaVu Sans Mono")
+
 (winner-mode)
 (windmove-default-keybindings 'super)
 
@@ -30,3 +32,6 @@
 (set-face-attribute 'default nil :height 110)
 
 (setq ag-highlight-search t)
+
+;; Indent 2 spaces in javascript-mode
+(setq js-indent-level 2)
