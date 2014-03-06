@@ -35,3 +35,6 @@
 
 ;; Indent 2 spaces in javascript-mode
 (setq js-indent-level 2)
+
+;; setup files ending in “.html” to open in Web mode
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
