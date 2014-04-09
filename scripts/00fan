@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for i in $(seq 0 10) ; 
+                do 
+                        echo "0" > /sys/devices/virtual/thermal/cooling_device${i}/cur_state
+                done
+
+xrandr --output DP1 --off
+xrandr --addmode 1366x768 DP1
+xrandr --output DP1 --mode 1366x768
+xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 168x1050 --rotate normal --output DP2 --off --output DP1 --mode 1680x1050 --pos 0x0 --rotate normal --output VGA1 --off
+

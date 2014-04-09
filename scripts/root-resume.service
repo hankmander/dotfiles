@@ -1,0 +1,11 @@
+[Unit]
+Description=Local system resume actions
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStart=/etc/pm/sleep.d/00fan
+
+
+[Install]
+WantedBy=suspend.target
