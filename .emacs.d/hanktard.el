@@ -5,10 +5,10 @@
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
 (global-set-key (kbd "C-<") 'ag )
+(global-set-key (kbd "C-z") "function(){}")
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
-(global-set-key (kbd "C-z") 'nil)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -34,7 +34,7 @@
 (setq ag-highlight-search t)
 
 ;; Indent 2 spaces in javascript-mode
-(setq js-indent-level 2)
+(setq js-indent-level 8)
 
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
