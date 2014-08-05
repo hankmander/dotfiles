@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
 (global-set-key (kbd "C-<") 'ag )
 (global-set-key (kbd "C-z") "function(){}")
+(global-set-key (kbd "C-§") 'dabbrev-expand)
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
