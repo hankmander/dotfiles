@@ -7,7 +7,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit jade-mode sws-mode stylus-mode coffee-mode markdown-mode ag web-mode)
+(defvar my-packages '(starter-kit jade-mode sws-mode scss-mode coffee-mode markdown-mode ag web-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -16,4 +16,3 @@
 
 (require 'jade-mode)
 (require 'sws-mode)
-(require 'stylus-mode)

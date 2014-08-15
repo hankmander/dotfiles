@@ -6,7 +6,7 @@
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
 (global-set-key (kbd "C-<") 'ag )
 (global-set-key (kbd "C-z") "function(){}")
-(global-set-key (kbd "C-§") 'dabbrev-expand)
+(global-set-key (kbd "<f2>") 'dabbrev-expand)
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
@@ -36,6 +36,8 @@
 
 ;; Indent 2 spaces in javascript-mode
 (setq js-indent-level 8)
+
+(setq scss-compile-at-save nil)
 
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
