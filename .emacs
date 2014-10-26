@@ -67,6 +67,7 @@
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
+
 (setq scss-compile-at-save nil)
 
 ;; setup files ending in “.html” to open in Web mode
