@@ -18,8 +18,6 @@
 (require 'sws-mode)
 (require 'stylus-mode)
 
-(add-to-list 'load-path "~/.emacd.d/hanktard.el")
-
 ;; hanktards små hack
 ;; key bindings
 (global-set-key (kbd "<C-tab>") 'ibuffer)
@@ -30,6 +28,8 @@
 (global-set-key (kbd "C-z") "function(){}")
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
+
+(toggle-frame-fullscreen)
 
 (setq x-select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
