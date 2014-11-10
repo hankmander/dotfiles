@@ -60,9 +60,9 @@
 ;; Indent 2 spaces in javascript-mode
 (setq js-indent-level 8)
 
-(custom-set-variables  
- '(js2-basic-offset 8)  
- '(js2-bounce-indent-p t)  
+(custom-set-variables
+ '(js2-basic-offset 8)
+ '(js2-bounce-indent-p t)
 )
 
 (setq-default indent-tabs-mode t)
@@ -72,3 +72,14 @@
 
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+;; Ido M-x mode
+(global-set-key
+ "\M-x"
+ (lambda ()
+   (interactive)
+   (call-interactively
+    (intern
+     (ido-completing-read
+      "M-x "
+      (all-completions "" obarray 'commandp))))))
