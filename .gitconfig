@@ -1,0 +1,9 @@
+[user]
+	email = henric@weld.io
+	name = Henric Malmberg
+[push]
+	default = simple
+[branch]
+	autosetuprebase = always
+[tig]	
+	vertical-split = no 
