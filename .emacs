@@ -30,6 +30,8 @@
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 (toggle-frame-fullscreen)
 
