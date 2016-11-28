@@ -8,7 +8,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(better-defaults jade-mode sws-mode stylus-mode coffee-mode markdown-mode ag web-mode find-file-in-git-repo)
+(defvar my-packages '(better-defaults jade-mode sws-mode stylus-mode markdown-mode ag web-mode find-file-in-git-repo)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
