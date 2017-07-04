@@ -25,7 +25,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'ag )
+(global-set-key (kbd "C-<") 'rg )
 (global-set-key (kbd "C-z") "function(){}")
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
@@ -59,15 +59,19 @@
 
 (set-face-attribute 'default nil :height 160)
 
-(setq ag-highlight-search t)
-
 ;; Indent 2 spaces in javascript-mode
 (setq js-indent-level 8)
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(js2-basic-offset 8)
  '(js2-bounce-indent-p t)
-)
+ '(package-selected-packages
+   (quote
+    (ag rg goto-last-change cider clojure-mode web-mode stylus-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode jade-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
@@ -87,3 +91,11 @@
      (ido-completing-read
       "M-x "
       (all-completions "" obarray 'commandp))))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(setq ido-max-directory-size 1000000)
