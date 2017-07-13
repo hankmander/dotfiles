@@ -67,11 +67,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(js-indent-level 8)
  '(js2-basic-offset 8)
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (ag rg goto-last-change cider clojure-mode web-mode stylus-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode jade-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
+    (smart-tabs-mode rg goto-last-change cider clojure-mode web-mode stylus-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode jade-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
@@ -80,6 +81,8 @@
 
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+;; js2-mode instead of js-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Ido M-x mode
 (global-set-key
@@ -99,3 +102,4 @@
  )
 
 (setq ido-max-directory-size 1000000)
+(smart-tabs-insinuate 'javascript)
