@@ -15,7 +15,6 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-
 ;; hanktards små hack
 ;; key bindings
 (global-set-key (kbd "<C-tab>") 'ibuffer)
@@ -46,13 +45,6 @@
 
 (winner-mode)
 (windmove-default-keybindings 'super)
-
-(defun coffee-custom ()
-  "coffee-mode-hook"
-  (set (make-local-variable 'tab-width) 2))
-
-(add-hook 'coffee-mode-hook
-  '(lambda() (coffee-custom)))
 
 (set-face-attribute 'default nil :height 160)
 
