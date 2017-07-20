@@ -103,3 +103,6 @@
 
 (setq ido-max-directory-size 1000000)
 (smart-tabs-insinuate 'javascript)
+
+;; start Ido-mode at boot.
+(ido-mode 1)
