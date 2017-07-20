@@ -8,16 +8,13 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(better-defaults jade-mode sws-mode stylus-mode markdown-mode ag web-mode find-file-in-git-repo)
+(defvar my-packages '(better-defaults markdown-mode web-mode find-file-in-git-repo)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(require 'jade-mode)
-(require 'sws-mode)
-(require 'stylus-mode)
 
 ;; hanktards små hack
 ;; key bindings
@@ -72,7 +69,7 @@
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (smart-tabs-mode rg goto-last-change cider clojure-mode web-mode stylus-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode jade-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
+    (smart-tabs-mode rg goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
