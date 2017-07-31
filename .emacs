@@ -21,7 +21,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'rg )
+(global-set-key (kbd "C-<") 'ripgrep-regexp )
 (global-set-key (kbd "C-z") "function(){}")
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
@@ -61,7 +61,7 @@
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (smart-tabs-mode rg goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
+    (ripgrep smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
