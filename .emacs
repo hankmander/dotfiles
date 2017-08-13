@@ -1,19 +1,11 @@
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; Add in your own as you wish:
-(defvar my-packages '(better-defaults markdown-mode web-mode find-file-in-git-repo)
-  "A list of packages to ensure are installed at launch.")
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
 
 ;; hanktards små hack
 ;; key bindings
@@ -56,12 +48,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(js-indent-level 8)
+ '(js-indent-level 8 t)
  '(js2-basic-offset 8)
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (ripgrep smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository find-file-in-git-repo better-defaults auto-complete))))
+    (auto-compile ripgrep smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
