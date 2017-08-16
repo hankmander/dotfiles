@@ -30,9 +30,6 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'fringe-mode) (fringe-mode 4))
 
-(set-foreground-color "white")
-(set-background-color "black")
-
 (set-default-font "Inconsolata Medium")
 
 (winner-mode)
@@ -48,12 +45,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(js-indent-level 8 t)
+ '(custom-safe-themes
+   (quote
+    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "ed8cf6d52a2ba9ed7a29a8aac81d83c362a9b62f48b558932a77130163fe9972" default)))
+ '(js-indent-level 8)
  '(js2-basic-offset 8)
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (auto-compile ripgrep smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete))))
+    (ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile ripgrep smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode php-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete))))
 
 (setq-default indent-tabs-mode t)
 ;; Disable SCSS auto compile
@@ -87,3 +87,10 @@
 
 ;; start Ido-mode at boot.
 (ido-mode 1)
+
+(load-theme 'zenburn)
+(set-background-color "black")
+
+(add-hook 'js2-mode-hook 'highlight-indent-guides-mode)
+(add-hook 'scss-mode-hook 'rainbow-mode)
+(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
