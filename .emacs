@@ -13,7 +13,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'ripgrep-regexp )
+(global-set-key (kbd "C-<") 'ag )
 (global-set-key (kbd "C-z") "function(){}")
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
