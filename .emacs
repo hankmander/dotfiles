@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-z") "function(){}")
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
-(global-set-key (kbd "C-x f") 'find-file-in-repository)
+(global-set-key (kbd "C-x C-a") 'projectile-find-file)
 (global-set-key (kbd "C-x C-g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
