@@ -23,7 +23,7 @@
 
 (toggle-frame-fullscreen)
 
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -37,31 +37,30 @@
 
 (set-face-attribute 'default nil :height 160)
 
-;; Indent 2 spaces in javascript-mode
-(setq js-indent-level 8)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(custom-safe-themes
    (quote
-    ("e03d2f414fb109f3920752b10b92323697174f49d577da9e69979edbb147a921" "0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5" "3f44e2d33b9deb2da947523e2169031d3707eec0426e78c7b8a646ef773a2077" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "2022c5a92bbc261e045ec053aa466705999863f14b84c012a43f55a95bf9feb8" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "2a739405edf418b8581dcd176aaf695d319f99e3488224a3c495cb0f9fd814e3" "cdfc5c44f19211cfff5994221078d7d5549eeb9feda4f595a2fd8ca40467776c" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "ed8cf6d52a2ba9ed7a29a8aac81d83c362a9b62f48b558932a77130163fe9972" default)))
+    ("d057f0430ba54f813a5d60c1d18f28cf97d271fd35a36be478e20924ea9451bd" "ec5f697561eaf87b1d3b087dd28e61a2fc9860e4c862ea8e6b0b77bd4967d0ba" "e03d2f414fb109f3920752b10b92323697174f49d577da9e69979edbb147a921" "0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5" "3f44e2d33b9deb2da947523e2169031d3707eec0426e78c7b8a646ef773a2077" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "2022c5a92bbc261e045ec053aa466705999863f14b84c012a43f55a95bf9feb8" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "2a739405edf418b8581dcd176aaf695d319f99e3488224a3c495cb0f9fd814e3" "cdfc5c44f19211cfff5994221078d7d5549eeb9feda4f595a2fd8ca40467776c" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "ed8cf6d52a2ba9ed7a29a8aac81d83c362a9b62f48b558932a77130163fe9972" default)))
  '(fci-rule-color "#383838")
- '(js-indent-level 8)
- '(js2-basic-offset 8)
+ '(flycheck-display-errors-delay 0)
+ '(global-flycheck-mode t)
+ '(js-indent-level 2)
+ '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
+ '(js2-strict-missing-semi-warning nil)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-files nil t)
  '(package-selected-packages
    (quote
-    (yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ag ibuffer-projectile projectile ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile smart-tabs-mode goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete)))
+    (vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ag ibuffer-projectile projectile ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
@@ -86,14 +85,15 @@
      (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3"))
 
-(setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
 ;; Disable SCSS auto compile
 
 (setq scss-compile-at-save nil)
 
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(setq-default tab-width 8)
+(add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
+
 ;; js2-mode instead of js-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
@@ -115,7 +115,6 @@
  )
 
 (setq ido-max-directory-size "No limit")
-(smart-tabs-insinuate 'javascript)
 
 ;; start Ido-mode & projectile at boot.
 (ido-mode 1)
@@ -125,9 +124,21 @@
 (set-background-color "black")
 
 (add-hook 'js2-mode-hook 'highlight-indent-guides-mode)
-(setq js2-strict-missing-semi-warning nil)
+;; turn of electric indent so js2 indentation works
+(add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode -1)))
+;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+(setq web-mode-enable-auto-indentation nil)
+
 
 ;; Keep backup files in this directory instead of working directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -137,3 +148,13 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
   )
+
+;; Enable flycheck
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+(eval-after-load 'js2-mode
+  '(add-hook 'js-mode-hook #'add-node-modules-path))
+
+(setq org-agenda-files (list "~/org/maisonFortunee.org"))
