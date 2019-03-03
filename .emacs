@@ -20,6 +20,7 @@
 (global-set-key (kbd "C-x C-a") 'projectile-find-file)
 (global-set-key (kbd "C-x C-g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 (toggle-frame-fullscreen)
 
@@ -59,7 +60,9 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(org-agenda-files nil t)
+ '(org-agenda-files nil)
+ '(org-default-notes-file "~/org/.notes")
+ '(org-return-follows-link t)
  '(package-selected-packages
    (quote
     (smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ag ibuffer-projectile projectile ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete)))
