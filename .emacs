@@ -33,7 +33,7 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'fringe-mode) (fringe-mode 4))
 
-(set-default-font "Inconsolata Medium")
+(set-default-font "Source Code Pro")
 
 (winner-mode)
 (windmove-default-keybindings 'super)
