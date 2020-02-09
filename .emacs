@@ -13,18 +13,23 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'ag )
-(global-set-key (kbd "C-z") "function(){}")
+(global-set-key (kbd "C-<") 'helm-projectile-rg )
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
-(global-set-key (kbd "C-x C-a") 'projectile-find-file)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(global-set-key (kbd "C-x C-a") 'helm-projectile)
 (global-set-key (kbd "C-x C-g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "s-e") 'next-error)
 (global-set-key (kbd "s-l") 'flycheck-list-errors)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-o") 'helm-swoop)
+
 
 (toggle-frame-fullscreen)
+
+(helm-mode 1)
 
 (setq select-enable-clipboard t)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
