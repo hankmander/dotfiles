@@ -113,7 +113,6 @@
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
 ;; js2-mode instead of js-mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Ido M-x mode
 (global-set-key
@@ -125,6 +124,8 @@
      (ido-completing-read
       "M-x "
       (all-completions "" obarray 'commandp))))))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -148,7 +149,10 @@
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
 (add-hook 'scss-mode-hook 'rainbow-mode)
-(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'js-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'js-mode-hook #'lsp-deferred)
+(add-hook 'js-mode-hook 'js2-minor-mode)
+
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
