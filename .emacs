@@ -113,17 +113,6 @@
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
 ;; js2-mode instead of js-mode
-
-;; Ido M-x mode
-(global-set-key
- "\M-x"
- (lambda ()
-   (interactive)
-   (call-interactively
-    (intern
-     (ido-completing-read
-      "M-x "
-      (all-completions "" obarray 'commandp))))))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
 
 (custom-set-faces
