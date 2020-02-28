@@ -15,9 +15,13 @@
   (setq datum (replace-regexp-in-string "Friday" "Fredag" datum))
   (setq datum (replace-regexp-in-string "Saturday" "Lördag" datum))
   (setq datum (replace-regexp-in-string "Sunday" "Söndag" datum))
-  (insert datum))
+  (insert datum)
+  (org-clock-in)
+  )
 
 ;;; Commentary:
 ;; Insert timestamp formatted to fit an org list.
 
 ;;; datumdag.el ends here
+
+
