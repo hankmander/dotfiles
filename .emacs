@@ -13,7 +13,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'helm-projectile-rg )
+(global-set-key (kbd "C-<") 'helm-projectile-ag )
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
 (global-set-key (kbd "C-q") 'yank)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
@@ -59,6 +59,10 @@
  '(electric-indent-mode nil)
  '(fci-rule-color "#383838")
  '(flycheck-display-errors-delay 0)
+ '(flycheck-eslint-rules-directories '("/home/hanktard/work/fuckercompany/"))
+ '(flycheck-javascript-eslint-executable
+   "/home/hanktard/work/fuckercompany/node_modules/.bin/eslint")
+ '(flycheck-javascript-standard-executable "npx standard")
  '(global-flycheck-mode t)
  '(highlight-indent-guides-method 'fill)
  '(indent-tabs-mode nil)
@@ -68,12 +72,13 @@
  '(js2-strict-missing-semi-warning nil)
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
- '(org-agenda-files nil t)
+ '(org-agenda-files nil)
  '(org-default-notes-file "~/org/.notes")
  '(org-return-follows-link t)
  '(package-selected-packages
-   '(helm-swoop lsp-treemacs company-lsp helm-lsp lsp-ui lsp-mode ac-helm helm-google helm-projectile helm helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
+   '(prettier-js helm-ag flyspell-correct-helm helm-flycheck helm-swoop lsp-treemacs company-lsp helm-lsp lsp-ui lsp-mode ac-helm helm-google helm-projectile helm helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme color-theme-solarized hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
+ '(safe-local-variable-values '((prettier-js-mode) (js-indent-level 4)))
  '(smooth-scrolling-mode t)
  '(ssass-tab-width 4)
  '(sublimity-mode t)
@@ -124,9 +129,12 @@
 
 (setq ido-max-directory-size "No limit")
 
-;; start Ido-mode & projectile at boot.
-(ido-mode 1)
+;; start projectile at boot.
+(setq projectile-git-command "~/dotfiles/scripts/git-ls-with-ignore.sh")
 (projectile-mode 1)
+
+(let ((print-escape-newlines t))
+  (prin1-to-string "foo\nbar"))
 
 (load-theme 'zenburn)
 (set-background-color "black")
@@ -139,8 +147,20 @@
 (setq js2-mode-show-strict-warnings nil)
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'js-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'js-mode-hook #'lsp-deferred)
+(add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
+;; (add-hook 'js-mode-hook (lambda
+;;                           ()
+;;
+
+(defun js-mode-flycheck-hooks ()
+  "Setup flycheck properly for 'js-mode'."
+  (flycheck-add-next-checker 'lsp 'javascript-eslint)
+  (remove-hook 'js-mode-hook 'js-mode-flycheck-hooks)
+)
+(add-hook 'js-mode-hook 'js-mode-flycheck-hooks)
+  
+;; (add-hook 'js-jsx-mode-hook (lambda () (flycheck-select-checker 'javascript-eslint))
 
 
 (defun my-web-mode-hook ()
@@ -173,4 +193,3 @@
 (load "~/dotfiles/datumdag.el")
 
 ;;; .emacs ends here
-
