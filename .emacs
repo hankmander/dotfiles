@@ -74,11 +74,11 @@
  '(js2-strict-missing-semi-warning nil)
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
- '(org-agenda-files nil)
+ '(org-agenda-files nil t)
  '(org-default-notes-file "~/org/.notes")
  '(org-return-follows-link t)
  '(package-selected-packages
-   '(color-theme-sanityinc-tomorrow solarized-theme prettier-js flyspell-correct-helm helm-flycheck lsp-treemacs company-lsp helm-lsp lsp-ui lsp-mode ac-helm helm-google helm-projectile helm helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-delimiters rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
+   '(color-theme-sanityinc-tomorrow solarized-theme prettier-js flyspell-correct-helm helm-flycheck lsp-treemacs company-lsp helm-lsp lsp-ui lsp-mode ac-helm helm-google helm-projectile helm helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(safe-local-variable-values
    '((helm-rg-default-glob-string . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css}*")
