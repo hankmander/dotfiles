@@ -148,7 +148,6 @@
 (setq ido-max-directory-size "No limit")
 
 ;; start projectile at boot.
-(setq projectile-git-command "~/dotfiles/scripts/git-ls-with-ignore.sh")
 (projectile-mode 1)
 
 (let ((print-escape-newlines t))
