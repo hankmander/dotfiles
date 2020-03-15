@@ -153,8 +153,7 @@
 (let ((print-escape-newlines t))
   (prin1-to-string "foo\nbar"))
 
-(load-theme 'zenburn)
-(set-background-color "black")
+(load-theme 'sanityinc-tomorrow-night)
 
 (add-hook 'js2-mode-hook 'highlight-indent-guides-mode)
 ;; turn of electric indent so js2 indentation works
