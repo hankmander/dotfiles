@@ -176,9 +176,6 @@
   :ensure t
   :init (global-flycheck-mode))
 
-
-(setq org-agenda-files (list "~/org/maisonFortunee.org"))
-
 (load "~/dotfiles/datumdag.el")
 
 ;;; .emacs ends here
