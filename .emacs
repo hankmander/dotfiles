@@ -142,8 +142,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(setq ido-max-directory-size "No limit")
-
 ;; start projectile at boot.
 (projectile-mode 1)
 
