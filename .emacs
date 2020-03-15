@@ -150,17 +150,9 @@
 
 (load-theme 'sanityinc-tomorrow-night)
 
-(add-hook 'js2-mode-hook 'highlight-indent-guides-mode)
-;; turn of electric indent so js2 indentation works
-(add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode -1)))
-;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
-(setq js2-mode-show-parse-errors nil)
-(setq js2-mode-show-strict-warnings nil)
 (add-hook 'scss-mode-hook 'rainbow-mode)
-(add-hook 'js-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
-
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -184,8 +176,6 @@
   :ensure t
   :init (global-flycheck-mode))
 
-(eval-after-load 'js2-mode
-  '(add-hook 'js-mode-hook #'add-node-modules-path))
 
 (setq org-agenda-files (list "~/org/maisonFortunee.org"))
 
