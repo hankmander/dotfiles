@@ -3,10 +3,22 @@
 
 ;;; Code:
 
+(defun get-stars()
+  "Print correct number of stars based on org level."
+  (insert
+   (make-string
+    (or
+     (org-element-property :level (org-element-at-point))
+     2
+     )
+    ?* )
+   )
+  )
+
 (defun datum-dag()
   "Print date and day."
   (interactive)
-  (setq datum (format-time-string "** %d/%m %A"))
+  (setq datum (format-time-string (concat (get-stars) " %d/%m %A")))
   (setq datum (replace-regexp-in-string "0\d*" "" datum))
   (setq datum (replace-regexp-in-string "Monday" "Måndag" datum))
   (setq datum (replace-regexp-in-string "Tuesday" "Tisdag" datum))
@@ -23,5 +35,3 @@
 ;; Insert timestamp formatted to fit an org list.
 
 ;;; datumdag.el ends here
-
-
