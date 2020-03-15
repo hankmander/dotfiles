@@ -7,45 +7,6 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
-;; hanktards små hack
-;; key bindings
-(global-set-key (kbd "C-§") 'helm-mini)
-(global-set-key (kbd "<C-tab>") 'helm-mini)
-(global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
-(global-set-key (kbd "s-d") (kbd "C-x d RET") )
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'helm-projectile-rg )
-(global-set-key (kbd "C-z") 'kill-ring-save )
-(global-set-key (kbd "C-y") 'yank )
-(global-set-key (kbd "<f2>") 'dabbrev-expand)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
-(global-set-key (kbd "C-x C-a") 'helm-projectile)
-(global-set-key (kbd "C-x C-g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "s-e") 'next-error)
-(global-set-key (kbd "s-l") 'flycheck-list-errors)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-o") 'helm-occur)
-
-(toggle-frame-fullscreen)
-
-(helm-mode 1)
-
-(setq select-enable-clipboard t)
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'fringe-mode) (fringe-mode 4))
-
-(set-frame-font "Source Code Pro")
-
-(winner-mode)
-(windmove-default-keybindings 'super)
-
-(set-face-attribute 'default nil :height 160)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -127,6 +88,45 @@
 (package-install-selected-packages)
 
 (load-theme 'sanityinc-tomorrow-night)
+(toggle-frame-fullscreen)
+
+;; hanktards små hack
+;; key bindings
+(global-set-key (kbd "C-§") 'helm-mini)
+(global-set-key (kbd "<C-tab>") 'helm-mini)
+(global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
+(global-set-key (kbd "s-d") (kbd "C-x d RET") )
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
+(global-set-key (kbd "C-<") 'helm-projectile-rg )
+(global-set-key (kbd "C-z") 'kill-ring-save )
+(global-set-key (kbd "C-y") 'yank )
+(global-set-key (kbd "<f2>") 'dabbrev-expand)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(global-set-key (kbd "C-x C-a") 'helm-projectile)
+(global-set-key (kbd "C-x C-g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "s-e") 'next-error)
+(global-set-key (kbd "s-l") 'flycheck-list-errors)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-o") 'helm-occur)
+
+(helm-mode 1)
+(projectile-mode 1)
+
+(setq select-enable-clipboard t)
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'fringe-mode) (fringe-mode 4))
+
+(set-frame-font "Source Code Pro")
+
+(winner-mode)
+(windmove-default-keybindings 'super)
+
+(set-face-attribute 'default nil :height 160)
 
 (setq-default indent-tabs-mode nil)
 
@@ -143,9 +143,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; start projectile at boot.
-(projectile-mode 1)
 
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook #'lsp)
