@@ -135,9 +135,6 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
-;; js2-mode instead of js-mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -165,18 +162,6 @@
 (add-hook 'js-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
-;; (add-hook 'js-mode-hook (lambda
-;;                           ()
-;;
-
-(defun js-mode-flycheck-hooks ()
-  "Setup flycheck properly for 'js-mode'."
-  (flycheck-add-next-checker 'lsp 'javascript-eslint)
-  (remove-hook 'js-mode-hook 'js-mode-flycheck-hooks)
-)
-(add-hook 'js-mode-hook 'js-mode-flycheck-hooks)
-  
-;; (add-hook 'js-jsx-mode-hook (lambda () (flycheck-select-checker 'javascript-eslint))
 
 
 (defun my-web-mode-hook ()
