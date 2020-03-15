@@ -147,9 +147,6 @@
 ;; start projectile at boot.
 (projectile-mode 1)
 
-(let ((print-escape-newlines t))
-  (prin1-to-string "foo\nbar"))
-
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
