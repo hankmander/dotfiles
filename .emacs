@@ -154,13 +154,7 @@
 (add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2)
-)
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-(setq web-mode-enable-auto-indentation nil)
-
+(setq web-mode-markup-indent-offset 2)
 
 ;; Keep backup files in this directory instead of working directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
