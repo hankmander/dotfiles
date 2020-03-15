@@ -126,6 +126,8 @@
 
 (package-install-selected-packages)
 
+(load-theme 'sanityinc-tomorrow-night)
+
 (setq-default indent-tabs-mode nil)
 
 ;; Disable SCSS auto compile
@@ -147,8 +149,6 @@
 
 (let ((print-escape-newlines t))
   (prin1-to-string "foo\nbar"))
-
-(load-theme 'sanityinc-tomorrow-night)
 
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook #'lsp)
