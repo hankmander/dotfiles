@@ -19,7 +19,6 @@
   "Print date and day."
   (interactive)
   (setq datum (format-time-string (concat (get-stars) " %d/%m %A")))
-  (setq datum (replace-regexp-in-string "0\d*" "" datum))
   (setq datum (replace-regexp-in-string "Monday" "Måndag" datum))
   (setq datum (replace-regexp-in-string "Tuesday" "Tisdag" datum))
   (setq datum (replace-regexp-in-string "Wednesday" "Onsdag" datum))
