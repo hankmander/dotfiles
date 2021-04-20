@@ -25,7 +25,6 @@
  '(flycheck-javascript-eslint-executable
    "/home/hanktard/work/fuckercompany/node_modules/.bin/eslint")
  '(flycheck-javascript-standard-executable "npx standard")
- '(global-flycheck-mode t)
  '(helm-completion-style 'emacs)
  '(highlight-indent-guides-method 'fill)
  '(indent-tabs-mode nil)
@@ -129,6 +128,7 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 (setq web-mode-markup-indent-offset 2)
+(setq web-mode-enable-auto-indentation nil)
 
 ;; Keep backup files in this directory instead of working directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -139,11 +139,7 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-;; Enable flycheck
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
-
 (load "~/dotfiles/datumdag.el")
 
+(require 'flycheck)
 ;;; .emacs ends here
