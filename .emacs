@@ -35,7 +35,7 @@
  '(org-default-notes-file "~/org/.notes")
  '(org-return-follows-link t)
  '(package-selected-packages
-   '(helm-company company jest tide xml-format eslint-fix gruvbox-theme helm deadgrep helm-ag color-theme-sanityinc-tomorrow solarized-theme prettier-js flyspell-correct-helm helm-flycheck lsp-treemacs helm-lsp lsp-ui lsp-mode ac-helm helm-google helm-projectile helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
+   '(eglot pdf-tools deno-fmt treemacs treemacs-magit treemacs-projectile helm-lsp lsp-ui helm-company company jest tide xml-format eslint-fix gruvbox-theme deadgrep color-theme-sanityinc-tomorrow solarized-theme prettier-js flyspell-correct-helm helm-flycheck ac-helm helm-google helm-projectile helm-rg string-inflection which-key vlf sql-indent smooth-scrolling vue-mode typescript-mode graphql-mode flycheck-rust rust-mode add-node-modules-path flycheck yaml-mode vcl-mode orca move-text web-beautify xah-css-mode ac-js2 json-mode csv-mode ibuffer-projectile projectile ample-theme anti-zenburn-theme hc-zenburn-theme material-theme moe-theme molokai-theme zenburn-theme gotham-theme highlight-indent-guides rainbow-mode magit csv auto-compile goto-last-change web-mode starter-kit-eshell starter-kit-bindings slime scss-mode org markdown-mode js2-mode find-file-in-repository better-defaults auto-complete use-package))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(prettier-js-command "~/node_modules/prettier/bin-prettier.js")
  '(safe-local-variable-values
@@ -60,9 +60,12 @@
  '(smooth-scrolling-mode t)
  '(ssass-tab-width 4)
  '(sublimity-mode t)
+ '(tide-server-max-response-length 9102400)
  '(typescript-indent-level 2)
  '(vue-html-extra-indent 0)
- '(vue-html-tab-width 4))
+ '(vue-html-tab-width 4)
+ '(warning-suppress-log-types '((lsp-mode) (lsp-mode) (lsp-mode) (lsp-mode) (comp)))
+ '(warning-suppress-types '((lsp-mode) (lsp-mode) (lsp-mode) (lsp-mode) (comp))))
 
 (package-install-selected-packages)
 
@@ -139,8 +142,6 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(load "~/dotfiles/datumdag.el")
-
 ;; Tide stuff
 (defun setup-tide-mode ()
   (interactive)
@@ -152,7 +153,10 @@
   ;; company is an optional dependency. You have to
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  (company-mode +1)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
