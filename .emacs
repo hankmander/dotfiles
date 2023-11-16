@@ -197,7 +197,6 @@
  )
 
 (add-hook 'scss-mode-hook 'rainbow-mode)
-(add-hook 'prog-mode-hook #'lsp)
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 (setq web-mode-markup-indent-offset 2)
