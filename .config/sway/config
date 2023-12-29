@@ -87,6 +87,8 @@ exec swayidle -w \
     bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
     bindsym XF86AudioMute exec "amixer set Master toggle"
 
+    bindsym Print exec "flameshot gui"
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
