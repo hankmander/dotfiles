@@ -201,6 +201,7 @@
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-enable-auto-indentation nil)
+(setq web-mode-enable-auto-quoting nil)
 
 ;; Keep backup files in this directory instead of working directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
