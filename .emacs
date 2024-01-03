@@ -176,7 +176,7 @@
 (set-frame-font "Source Code Pro")
 
 (winner-mode)
-(windmove-default-keybindings 'super)
+(windmove-default-keybindings 'meta)
 
 (set-face-attribute 'default nil :height 120)
 
