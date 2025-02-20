@@ -1,6 +1,6 @@
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_SESSION XDG_CURRENT_DESKTOP
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
-
+for_window [app_id="firefox" title="^$"] floating enable, move absolute position 0 0
 input * {
         xkb_layout "se"
 }
@@ -9,9 +9,11 @@ exec gammastep -l 59.3142913:18.0204347 -b 1.0:0.6
 
 default_border none
 default_floating_border none
-font monospace 0
+font monospace 16
 titlebar_padding 1
 titlebar_border_thickness 0
+
+focus_follows_mouse no
 
 # Default config for sway
 #
@@ -40,7 +42,7 @@ set $menu dmenu_path | wmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/hanktard/work/background/xp.jpg fill
 #
 # Example configuration:
 #
@@ -84,7 +86,7 @@ exec swayidle -w \
     bindsym Control+Mod1+Delete exec "swaylock -c 000000"
 
     bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
-    bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+    bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+; amixer set Headphone 5%+; amixer set Speaker 5%+;"
     bindsym XF86AudioMute exec "amixer set Master toggle"
 
     bindsym Print exec "flameshot gui"
