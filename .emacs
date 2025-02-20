@@ -15,7 +15,8 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(custom-safe-themes
-   '("d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d"
+   '("8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
+     "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d"
      "d537a9d42c6f5349d1716ae9be9a0645cc168f7aff2a8353819d570e5d02c0b3"
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
      "2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20"
@@ -99,22 +100,22 @@
             highlight-indent-guides ibuffer-projectile js2-mode
             json-mode lsp-mode lsp-ui magit magit-section
             markdown-mode material-theme moe-theme molokai-theme
-            move-text orca org pdf-tools prettier-js projectile
-            rainbow-mode rust-mode scss-mode slime solarized-theme
-            sql-indent starter-kit-bindings starter-kit-eshell
-            string-inflection tide treemacs treemacs-projectile
-            typescript-mode use-package vcl-mode vlf vue-mode
-            web-beautify web-mode which-key xah-css-mode xml-format
-            yaml-mode zenburn-theme))
+            move-text orca org pdf-tools prettier-js prettier-rc
+            projectile rainbow-mode rust-mode scss-mode smooth-scroll
+            solarized-theme sql-indent starter-kit-bindings
+            starter-kit-eshell string-inflection tide treemacs
+            treemacs-projectile typescript-mode use-package vcl-mode
+            vlf vue-mode web-beautify web-mode which-key xah-css-mode
+            xml-format yaml-mode zenburn-theme))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(prettier-js-command "~/node_modules/prettier/bin-prettier.js")
  '(safe-local-variable-values
-   '((helm-rg-default-glob-string .
-                                  "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid,airinum.css}*")
-     (helm-rg-default-glob-string .
-                                  "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid}*")
-     (helm-rg-default-glob-string .
-                                  "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css}*")
+   '((helm-rg-default-glob-string
+      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid,airinum.css}*")
+     (helm-rg-default-glob-string
+      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid}*")
+     (helm-rg-default-glob-string
+      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css}*")
      (helm-rg-default-extra-args . "-Tlock")
      (helm-rg-default-glob-string . "!*.min.*")
      (helm-rg-default-extra-args . "-g \"*vendor.js\"")
@@ -188,6 +189,8 @@
 ;; setup files ending in “.html” to open in Web mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . tsx-ts-mode))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -228,12 +231,7 @@
 			  (setq web-mode-code-indent-offset 2)
 			  )
 
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-	            (lambda ()
-		                  (when (string-equal "tsx" (file-name-extension buffer-file-name))
-				                  (setup-tide-mode))))
+(add-hook 'tsx-ts-mode-hook #'setup-tide-mode)
 
 ;; enable typescript-tslint checker
 (require 'flycheck)
@@ -243,11 +241,30 @@
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
-;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-
 (add-hook 'typescript-ts-mode-hook #'setup-tide-mode)
 
 ;;; .emacs ends here
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(setq treesit-language-source-alist
+   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+     (cmake "https://github.com/uyha/tree-sitter-cmake")
+     (css "https://github.com/tree-sitter/tree-sitter-css")
+     (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+     (go "https://github.com/tree-sitter/tree-sitter-go")
+     (html "https://github.com/tree-sitter/tree-sitter-html")
+     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+     (json "https://github.com/tree-sitter/tree-sitter-json")
+     (make "https://github.com/alemuller/tree-sitter-make")
+     (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+     (python "https://github.com/tree-sitter/tree-sitter-python")
+     (toml "https://github.com/tree-sitter/tree-sitter-toml")
+     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+(add-hook 'typescript-mode-hook 'prettier-rc-mode)
+(add-hook 'tsx-ts-mode-hook 'prettier-rc-mode)
+(add-hook 'js2-mode-hook 'prettier-rc-mode)
+(add-hook 'web-mode-hook 'prettier-rc-mode)
