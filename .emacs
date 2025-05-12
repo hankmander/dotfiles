@@ -262,3 +262,10 @@
 (add-hook 'tsx-ts-mode-hook 'prettier-rc-mode)
 (add-hook 'js2-mode-hook 'prettier-rc-mode)
 (add-hook 'web-mode-hook 'prettier-rc-mode)
+
+(use-package aider
+  :config
+  (setq aider-args '("--model" "openrouter/anthropic/claude-3.7-sonnet" "--no-auto-accept-architect"))
+  (global-set-key (kbd "C-c a") 'aider-transient-menu))
+
+(require 'aider-helm)
