@@ -15,7 +15,13 @@
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(custom-safe-themes
-   '("8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
+   '("a0f44dd00ce24985ee69df0579a22a0903881fd6d7b12c9f3a19e3d638a77590"
+     "8899e88d19a37d39c7187f4bcb5bb596fba990728ef963420b93e2aea5d1666a"
+     "d89e15a34261019eec9072575d8a924185c27d3da64899905f8548cbd9491a36"
+     "3d21eda97ce916fda054b0d2e1381e3fb3118cee79749e4b282b55fc461fb13e"
+     "b494aae329f000b68aa16737ca1de482e239d44da9486e8d45800fd6fd636780"
+     "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016"
+     "8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
      "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d"
      "d537a9d42c6f5349d1716ae9be9a0645cc168f7aff2a8353819d570e5d02c0b3"
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
@@ -90,41 +96,29 @@
  '(org-default-notes-file "~/org/.notes")
  '(org-return-follows-link t)
  '(package-selected-packages
-   '(ac-js2 add-node-modules-path ample-theme anti-zenburn-theme
+   '(ac-js2 add-node-modules-path aider ample-theme anti-zenburn-theme
             auto-compile auto-complete better-defaults
-            color-theme-sanityinc-tomorrow company csv csv-mode
-            deadgrep deno-fmt eglot eslint-fix find-file-in-repository
-            flycheck flycheck-rust foggy-night-theme gotham-theme
+            color-theme-sanityinc-tomorrow company consult csv
+            csv-mode deadgrep deno-fmt eglot eslint-fix
+            find-file-in-repository find-file-rg flycheck
+            flycheck-rust foggy-night-theme gotham-theme
             goto-last-change graphql-mode gruvbox-theme
             hc-zenburn-theme helm helm-core helm-projectile helm-rg
             highlight-indent-guides ibuffer-projectile js2-mode
             json-mode lsp-mode lsp-ui magit magit-section
             markdown-mode material-theme moe-theme molokai-theme
             move-text orca org pdf-tools prettier-js prettier-rc
-            projectile rainbow-mode rust-mode scss-mode smooth-scroll
-            solarized-theme sql-indent starter-kit-bindings
-            starter-kit-eshell string-inflection tide treemacs
-            treemacs-projectile typescript-mode use-package vcl-mode
-            vlf vue-mode web-beautify web-mode which-key xah-css-mode
-            xml-format yaml-mode zenburn-theme))
+            projectile projectile-ripgrep rainbow-mode rg rust-mode
+            scss-mode smooth-scroll solarized-theme sql-indent
+            starter-kit-bindings starter-kit-eshell string-inflection
+            tide treemacs treemacs-projectile typescript-mode
+            use-package vcl-mode vertico vlf vue-mode web-beautify
+            web-mode which-key xah-css-mode xml-format yaml-mode
+            zenburn-theme))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(prettier-js-command "~/node_modules/prettier/bin-prettier.js")
  '(safe-local-variable-values
-   '((helm-rg-default-glob-string
-      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid,airinum.css}*")
-     (helm-rg-default-glob-string
-      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css,theme.scss.liquid}*")
-     (helm-rg-default-glob-string
-      . "!*{.min.,vendor.js,doubly.js,polyfills.js,.svg,yotpo-full-css.css}*")
-     (helm-rg-default-extra-args . "-Tlock")
-     (helm-rg-default-glob-string . "!*.min.*")
-     (helm-rg-default-extra-args . "-g \"*vendor.js\"")
-     (helm-rg-default-extra-args . "-g '*vendor.js'")
-     (helm-rg-default-extra-args . "-m '!*vendor.js'")
-     (helm-rg-default-extra-args . "-g '!*vendor.js'")
-     (helm-rg-default-extra-args . "-g !*vendor.js")
-     (helm-rg-default-glob-string . "!*lock*")
-     (add-to-list 'auto-mode-alist '("\\.js\\'" . prettier-js-mode))
+   '((add-to-list 'auto-mode-alist '("\\.js\\'" . prettier-js-mode))
      (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
      (js-indent-level . 2) (prettier-js-mode) (js-indent-level 2)))
  '(smooth-scrolling-mode t)
