@@ -158,7 +158,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-o") 'helm-occur)
 
-(helm-mode 1)
+(vertico-mode 1)
 (projectile-mode 1)
 
 (setq select-enable-clipboard t)
