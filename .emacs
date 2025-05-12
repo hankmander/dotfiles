@@ -144,7 +144,7 @@
 (global-set-key (kbd "<backtab>") (kbd "C-u -2 C-x TAB") )
 (global-set-key (kbd "s-d") (kbd "C-x d RET") )
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region )
-(global-set-key (kbd "C-<") 'helm-projectile-rg )
+(global-set-key (kbd "C-<") 'consult-ripgrep )
 (global-set-key (kbd "C-z") 'kill-ring-save )
 (global-set-key (kbd "C-y") 'yank )
 (global-set-key (kbd "<f2>") 'dabbrev-expand)
